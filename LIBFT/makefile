@@ -14,7 +14,7 @@ LIBC = ar rcs
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} 
 
 ${NAME}:	${OBJS}
-		${LIBC} ${NAME} ${OBJS}
+		${LIBC} ${NAME} ${OBJS} 
 
 all:	${NAME}
 
