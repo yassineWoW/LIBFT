@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:24:53 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/05 19:15:52 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/09 20:47:36 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
-char	*strnstr(const char *kawma, const char *ibra, size_t len);
-
+char	*ft_strnstr(const char *kawma, const char *ibra, size_t len);
+int		ft_atoi(const char  *string);
 
 #endif

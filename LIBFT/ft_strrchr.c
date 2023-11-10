@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:35:12 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/02 18:55:06 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/07 21:40:33 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*lastspot;
+	int	i;
 
-	lastspot = NULL;
-	while (*s != '\0')
+	i = 0;
+	while (s[i] != '\0')
+	i++;
+	while (i >= 0)
 	{
-		if (*s == (char)c)
-			lastspot = s;
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	if (c == '\0')
-	{
-		return (NULL);
-	}
-	return ((char *)lastspot);
+	return (0);
 }
