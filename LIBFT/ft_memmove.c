@@ -6,29 +6,25 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:28:35 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/11 18:01:43 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:19:26 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*sbuffer;
 	unsigned char	*dbuffer;
 
 	sbuffer = (unsigned char *)src;
 	dbuffer = (unsigned char *)dst;
-
 	if (len == 0 || sbuffer == dbuffer)
 		return (dst);
 	if (dbuffer >= sbuffer + len || sbuffer > dbuffer)
 	{
-		while (len > 0)
-		{
+		while (len--)
 			*dbuffer++ = *sbuffer++;
-			len--;
-		}
 	}
 	else
 	{

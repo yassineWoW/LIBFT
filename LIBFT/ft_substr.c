@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 16:06:01 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/12 17:28:30 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/12 17:49:25 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/12 21:32:37 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char	*string)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int				i;
-	int				ichara;
-	unsigned long	result;
+	size_t	slen;
+	char	*new;
+	
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
 
-	i = 0;
-	ichara = 1;
-	result = 0;
-	while (string[i] == 32 || (string[i] >= 9 && string[i] <= 13))
-			i++;
-	if (string[i] == '-')
-	{
-		ichara = -1;
-		i++;
-	}
-	else if (string[i] == '+')
-	i++;
-	while (ft_isdigit(string[i]))
-	{
-		result *= 10;
-		result += string[i] - '0';
-		i++;
-	}
-	return (result * ichara);
+	
 }

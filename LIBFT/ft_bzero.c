@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 21:37:41 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/11 21:47:03 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:04:30 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	unsigned char *string;
+	size_t			i;
+	unsigned char	*string;
 
 	i = 0;
 	string = s;
-
 	while (i < n)
 	{
 		string[i] = 0;

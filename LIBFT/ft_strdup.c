@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 16:06:01 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/12 17:28:30 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/12 14:03:45 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/12 17:31:25 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char	*string)
+char	*ft_strdup(const char *s1)
 {
-	int				i;
-	int				ichara;
-	unsigned long	result;
+	size_t	i;
+	char	*dupped;
 
-	i = 0;
-	ichara = 1;
-	result = 0;
-	while (string[i] == 32 || (string[i] >= 9 && string[i] <= 13))
-			i++;
-	if (string[i] == '-')
-	{
-		ichara = -1;
-		i++;
-	}
-	else if (string[i] == '+')
-	i++;
-	while (ft_isdigit(string[i]))
-	{
-		result *= 10;
-		result += string[i] - '0';
-		i++;
-	}
-	return (result * ichara);
+	i = ft_strlen(s1);
+	dupped = (char *)malloc((sizeof(char) * i) + 1);
+	if (dupped == NULL)
+		return (0);
+	ft_memcpy(dupped, s1, i);
+	dupped[i] = '\0';
+	return (dupped);
 }
