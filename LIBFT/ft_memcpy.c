@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 20:49:51 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/11 10:53:43 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/11 17:39:08 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/11 18:10:58 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	unsigned char *mem1 = (unsigned char *)s1;
-	unsigned char *mem2 = (unsigned char *)s2;
+	size_t	i;
+	if (!dst && !src)
+		return (NULL);
 
-	if (n == 0)
-		return 0;
-	while (n > 0)
+	i = 0;
+	if (dst != src)
 	{
-		if (*mem1 != *mem2)
-			return ((int)(*mem1 - *mem2));
-
-		mem1++;
-		mem2++;
-		n--;
+		while (i < len)
+		{
+			((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+			i++;
+		}
 	}
-	return 0;
+	return (dst);
 }
