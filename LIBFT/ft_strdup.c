@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 14:03:45 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/12 17:31:25 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:58:21 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	dupped = (char *)malloc((sizeof(char) * i) + 1);
 	if (dupped == NULL)
 		return (0);
-	ft_memcpy(dupped, s1, i);
+	ft_strlcpy(dupped, s1, i + 1);
 	dupped[i] = '\0';
 	return (dupped);
 }

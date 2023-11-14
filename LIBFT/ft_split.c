@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 17:49:25 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/14 15:27:18 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/14 18:01:20 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char **ft_split(char const *s, char c)
 {
-	char	*new;
-	size_t	slen;
-	size_t	end;
 
-	slen = ft_strlen(s);
-	end = 0;
-	if (!s)
-		return (0);
-	if (len == 0 || start >= slen)
-		return (ft_calloc(1, 1));
-	if (start < slen)
-		end = slen - start;
-	if (end > len)
-		end = len;
-	new = (char *)ft_calloc(end + 1, 1);
-	if (!new)
-		return (0);
-	ft_strlcpy(new, s + start, end + 1);
-	return (new);
 }
