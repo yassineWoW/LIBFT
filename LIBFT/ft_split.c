@@ -6,11 +6,22 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/17 21:39:50 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/18 18:35:07 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void freestr(char	**split, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(split[i]);
+	}
+	free(split);
+
+}
 
 static int	ft_countwords(char const *s, char delimiter)
 {
@@ -34,7 +45,7 @@ static int	ft_countwords(char const *s, char delimiter)
 	return (wordcount);
 }
 
-static	char **allowords(char **split, char const *s ,int wordcount)
+static	char **allowords(char **split, char const *s ,int wordcount, char c)
 {
 	int	i;
 	int	j;
@@ -53,25 +64,14 @@ static	char **allowords(char **split, char const *s ,int wordcount)
 			while (s[i] != c && s[i] != '\0')
 				i++;
 			split[k] = ft_substr(s, j, i - j);
-			ft_strlcpy( *split[k], &s[j], (i - j) + 1);
+			if (!split)
+				freestr(split, k);
 			j = i;
 			k++;
 		}
 	}
-	return (split);
-}
 
-static void	freee(char	**split)
-{
-	int	i;
-	
-	i = 0;
-	while (i > 0)
-	{
-		i--;
-		free(split[i]);
-	}
-	free(split);
+	return (split);
 }
 
 char **ft_split(char const *s, char c)
@@ -80,11 +80,10 @@ char **ft_split(char const *s, char c)
 	int count;
 
 	count = ft_countwords(s, c);
-	splited = (char **)malloc((count + 1) * sizeof(char *));
-	splited[count + 1] = NULL;
+	splited = (char **)ft_calloc((count + 1) , sizeof(char *));
 	if (!splited)
 		return (NULL);	
-	allowords(s, c, count);
-	free(splitted);
-	return (NULL);
+	allowords(splited, s, count, c);
+	
+	return (splited);
 }
