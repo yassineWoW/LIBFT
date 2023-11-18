@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:22:18 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/18 18:01:23 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/18 21:44:47 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ int	main(void)
 
 	//-------------------ft_split---------------------------
 	//printf(ft_split("    hello   main   ", ' '));
-	int i = 0;
-
- char *s = "      split       this for   me  !       ";
-    char **rs =ft_split(s,' ');
-
-	while(rs[i] != NULL)
-    	printf("%s\n",rs[i++]);
 
     return (0);
 }

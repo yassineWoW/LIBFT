@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/18 18:35:07 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/18 21:37:44 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ static int	ft_countwords(char const *s, char delimiter)
 {
 	int	i;
 	int	wordcount;
-	int flag = 1;
+	int flag;
 
 	i = 0;
 	wordcount = 0;
+	flag = 1;
 	while(s[i] != '\0')
 	{
 		if (s[i] == delimiter)
@@ -52,7 +53,6 @@ static	char **allowords(char **split, char const *s ,int wordcount, char c)
 	int	k;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	while (wordcount > k)
 	{
@@ -64,13 +64,12 @@ static	char **allowords(char **split, char const *s ,int wordcount, char c)
 			while (s[i] != c && s[i] != '\0')
 				i++;
 			split[k] = ft_substr(s, j, i - j);
-			if (!split)
+			if (!split[k])
 				freestr(split, k);
 			j = i;
 			k++;
 		}
 	}
-
 	return (split);
 }
 
@@ -78,6 +77,9 @@ char **ft_split(char const *s, char c)
 {
 	char	**splited;
 	int count;
+	
+	if(s == NULL)
+		return(NULL);
 
 	count = ft_countwords(s, c);
 	splited = (char **)ft_calloc((count + 1) , sizeof(char *));
