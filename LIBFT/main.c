@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:22:18 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/18 21:44:47 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/19 15:46:38 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
     //printf("%s \n", strnstr("come again", "again", 10));
 	//----------------------------------------------------
 
+
 	//------------------ft_memcmp---------------------------
 	//printf("%d, memcmp()\n" , memcmp("aa\0ec", "aa\0dd", 5));
 	//printf("%d, ft_memcmp()" , ft_memcmp("aa\0ec", "aa\0dd", 5));
@@ -45,9 +46,12 @@ int	main(void)
 	//-------------------ft_memmove---------------------------
 	//printf("%d \n", INT_MAX);
 
-
 	//-------------------ft_split---------------------------
 	//printf(ft_split("    hello   main   ", ' '));
 
+
+	//-------------------ft_itoi---------------------------
+	printf("%s\n", ft_itoi(1234));
+	
     return (0);
 }
