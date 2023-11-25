@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 17:39:08 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/25 18:05:43 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/25 10:44:54 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/25 12:39:01 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t len)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	if (!dst && !src)
-		return (NULL);
-	i = 0;
-	if (dst != src)
+	if (*lst)
 	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		ft_lstlast(*lst)->next = new;
 	}
-	return (dst);
-}
-
-int main()
-{
-	int t[] = {1, 2, 3, 4};
+	else
+		*lst = new;
 }

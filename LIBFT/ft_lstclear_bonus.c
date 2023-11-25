@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 17:39:08 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/25 18:05:43 by yimizare         ###   ########.fr       */
+/*   Created: 2023/11/25 12:59:33 by yimizare          #+#    #+#             */
+/*   Updated: 2023/11/25 16:13:35 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
+	t_list	*nextnode;
 
-	if (!dst && !src)
-		return (NULL);
-	i = 0;
-	if (dst != src)
+	if (lst == NULL)
+		return ;
+	while (*lst != NULL)
 	{
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		nextnode = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = nextnode;
 	}
-	return (dst);
-}
-
-int main()
-{
-	int t[] = {1, 2, 3, 4};
 }
