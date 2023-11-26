@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 14:47:03 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/25 15:07:19 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:35:40 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
-	
 	while (lst)
 	{
 		f(lst->content);

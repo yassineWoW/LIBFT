@@ -6,13 +6,13 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/18 21:37:44 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:47:42 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void freestr(char	**split, int i)
+static void	freestr(char	**split, int i)
 {
 	while (i > 0)
 	{
@@ -20,19 +20,18 @@ static void freestr(char	**split, int i)
 		free(split[i]);
 	}
 	free(split);
-
 }
 
 static int	ft_countwords(char const *s, char delimiter)
 {
 	int	i;
 	int	wordcount;
-	int flag;
+	int	flag;
 
 	i = 0;
 	wordcount = 0;
 	flag = 1;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == delimiter)
 			flag = 1;
@@ -46,7 +45,7 @@ static int	ft_countwords(char const *s, char delimiter)
 	return (wordcount);
 }
 
-static	char **allowords(char **split, char const *s ,int wordcount, char c)
+static	char	**allowords(char **split, char const *s, int wordcount, char c)
 {
 	int	i;
 	int	j;
@@ -59,7 +58,7 @@ static	char **allowords(char **split, char const *s ,int wordcount, char c)
 		while (s[i] == c)
 				i++;
 		j = i;
-		if(s[i] != '\0' && s[i] != c)
+		if (s[i] != '\0' && s[i] != c)
 		{	
 			while (s[i] != c && s[i] != '\0')
 				i++;
@@ -73,19 +72,17 @@ static	char **allowords(char **split, char const *s ,int wordcount, char c)
 	return (split);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**splited;
-	int count;
-	
-	if(s == NULL)
-		return(NULL);
+	int		count;
 
+	if (s == NULL)
+		return (NULL);
 	count = ft_countwords(s, c);
-	splited = (char **)ft_calloc((count + 1) , sizeof(char *));
+	splited = (char **)ft_calloc((count + 1), sizeof(char *));
 	if (!splited)
-		return (NULL);	
+		return (NULL);
 	allowords(splited, s, count, c);
-	
 	return (splited);
 }

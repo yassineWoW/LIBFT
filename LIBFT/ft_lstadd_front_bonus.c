@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 19:05:10 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/25 10:44:13 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:39:03 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }

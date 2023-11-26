@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:39:08 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/25 18:05:43 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:39:32 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			((char *)dst)[i] = ((char *)src)[i];
 			i++;
 		}
 	}
 	return (dst);
-}
-
-int main()
-{
-	int t[] = {1, 2, 3, 4};
 }
