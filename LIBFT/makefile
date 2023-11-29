@@ -12,13 +12,13 @@ SRCSB = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -Wall -Werror -Wextra
 CC = cc
 OBJS = ${SRCS:.c=.o}
 OBJSB = ${SRCSB:.c=.o}
 NAME = libft.a
 RM = rm -f
-LIBC = ar rcs
+LIBC = ar r
 
 
 ${NAME}:	${OBJS}
@@ -26,7 +26,10 @@ ${NAME}:	${OBJS}
 
 all:	${NAME}
 
-bonus:	${NAME}	${OBJSB}
+bonus:	${OBJSB}
+
+${OBJSB} : $(SRCSB)
+		$(CC) $(CFLAGS) -c $(SRCSB)
 		${LIBC}	${NAME} ${OBJSB}
 clean:
 		${RM} ${OBJS} ${OBJSB}
@@ -35,6 +38,8 @@ fclean:	clean
 		${RM}	${NAME}	${bonus}
 
 re:	fclean	all
+
 git:
 	git add . ;git commit -m " f"; git push 
+
 .PHONY:	all bonus	re	clean	fclean

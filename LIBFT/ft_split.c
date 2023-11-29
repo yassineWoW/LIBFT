@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/26 18:47:42 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:46:30 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	freestr(char	**split, int i)
 {
-	while (i > 0)
+	while (i >= 0)
 	{
-		i--;
 		free(split[i]);
+		i--;
 	}
 	free(split);
 }
@@ -64,9 +64,12 @@ static	char	**allowords(char **split, char const *s, int wordcount, char c)
 				i++;
 			split[k] = ft_substr(s, j, i - j);
 			if (!split[k])
+			{
 				freestr(split, k);
-			j = i;
+				return NULL;
+			}	
 			k++;
+			j = i;
 		}
 	}
 	return (split);
@@ -82,7 +85,8 @@ char	**ft_split(char const *s, char c)
 	count = ft_countwords(s, c);
 	splited = (char **)ft_calloc((count + 1), sizeof(char *));
 	if (!splited)
-		return (NULL);
-	allowords(splited, s, count, c);
+		return(NULL);
+	if(allowords(splited, s, count, c)==NULL)
+		return NULL;
 	return (splited);
 }

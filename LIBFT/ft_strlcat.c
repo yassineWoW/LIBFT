@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:06:08 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/07 21:16:36 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:41:22 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t Ndstsize)
 	size_t	sl;
 	size_t	dl;
 
+	if (dst == NULL && Ndstsize == 0)
+		return (ft_strlen(src));
 	sl = ft_strlen(src);
 	j = ft_strlen(dst);
 	dl = j;
-	if (dst == NULL && Ndstsize == 0)
-		return (sl);
-	if (Ndstsize <= dl)
+	if (Ndstsize == 0 || Ndstsize < dl)
 		return (Ndstsize + sl);
 	i = 0;
 	while (src[i] != '\0' && j + 1 < Ndstsize)

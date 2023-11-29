@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 17:49:25 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/14 15:27:18 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:24:35 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	size_t	end;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	end = 0;
-	if (!s)
-		return (0);
 	if (len == 0 || start >= slen)
 		return (ft_calloc(1, 1));
 	if (start < slen)
