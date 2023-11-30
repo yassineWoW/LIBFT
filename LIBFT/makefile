@@ -20,11 +20,10 @@ NAME = libft.a
 RM = rm -f
 LIBC = ar r
 
+all:	${NAME}
 
 ${NAME}:	${OBJS}
 		${LIBC} ${NAME} ${OBJS}
-
-all:	${NAME}
 
 bonus:	${OBJSB}
 
@@ -35,7 +34,7 @@ clean:
 		${RM} ${OBJS} ${OBJSB}
 
 fclean:	clean
-		${RM}	${NAME}	${bonus}
+		${RM}	${NAME}	${OBJSB}
 
 re:	fclean	all
 

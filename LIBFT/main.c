@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:22:18 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/29 17:48:22 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:59:32 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,38 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-/*void *f(void *cont)
-{
-	return cont;
-}
-void del(void *cont)
-{
-	(void)cont;
-}
-void fun()
-{
-		t_list *ptr;
-	ptr = ft_lstnew("ASD");
+    //void *f(void *cont)
+    //{
+    //     *(char *)cont -= 32;
+    //        return cont;
+    //}
 
-	ft_lstadd_back(&ptr, ft_lstnew("BBB"));
-	ft_lstadd_back(&ptr, ft_lstnew("CCC"));
+    //void del(void *cont)
+    //{
+    //    cont = NULL;
+    //}
 
-	t_list *str=ft_lstmap(ptr, f, del);
-	ft_lstclear(&ptr, del);
-	ft_lstclear(&str, del);
-}*/
+    //void fun()
+    //{
+    //    char a[] = "hello";
+    //    char b[] = "world";
 
+    //    t_list *list;
+    //    t_list *mapped;
+
+    //    list = ft_lstnew(&a);
+    
+    //    ft_lstadd_back(&list, ft_lstnew(&b));
+    //    mapped = ft_lstmap(list, f, del);
+
+    //    while (mapped)
+    //    {
+    //        printf("%s\n", (char *)mapped->content);
+    //        mapped = mapped->next;
+    //    }
+
+    //}
+    
 int	main(void)
 {
 	//--------------ft_isalpha-------------------
@@ -67,7 +78,11 @@ int	main(void)
     //printf("%s \n", strnstr("come again", "again", 10));
 	//----------------------------------------------------
 
+    //-------------------ft_strtrim-------------------------
+        //char *s1 = "  i iskawa tcha i  ";
 
+        //printf("%s\n", ft_strtrim(s1, "  "));
+        //printf("%zu\n", ft_strlen(ft_strtrim(s1, "  ")));
 	//------------------ft_memcmp---------------------------
 	//printf("%d, memcmp()\n" , memcmp("aa\0ec", "aa\0dd", 5));
 	//printf("%d, ft_memcmp()" , ft_memcmp("aa\0ec", "aa\0dd", 5));
@@ -90,7 +105,7 @@ int	main(void)
 	//if (!split)
 		//free(split);
 	//-------------------ft_itoi---------------------------
-	//printf("%s\n", ft_itoi(1234));
+	//printf("%s\n", ft_itoa(INT_MIN));
 	//--------------------ft_memset------------------------------------
 
 		//int a[] = {0, 0};
@@ -131,10 +146,10 @@ int	main(void)
 	//printf("%s\n",a);
 	//---------------------putchar_fd-----------------------------------
 
-	int a = open("a.txt",  O_CREAT | O_RDWR, 0700);
-	ft_putchar_fd('a', a);
-	printf("%d\n", a);
-	close(a);
+	//int a = open("a.txt",  O_CREAT | O_RDWR, 0700);
+	//ft_putchar_fd('a', a);
+	//printf("%d\n", a);
+	//close(a);
    //------------------------------------------------------------------
 	//
 
@@ -156,9 +171,13 @@ int	main(void)
 	ft_memset(&b, 1, 2);
 	printf("%d\n", b);*/
     //-----------------------------------lstaddnew--------------------------
-//fun();
-//system("leaks a.out");
-	return (0);
+void *ptr = ft_calloc(4000000000, 4611);
+(void)ptr;
+
+    //fun();
+
+
+return (0);
 }
 
 

@@ -6,13 +6,13 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:00:55 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/29 11:46:30 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:14:10 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	freestr(char	**split, int i)
+static char	**freestr(char	**split, int i)
 {
 	while (i >= 0)
 	{
@@ -20,6 +20,7 @@ static void	freestr(char	**split, int i)
 		i--;
 	}
 	free(split);
+	return (NULL);
 }
 
 static int	ft_countwords(char const *s, char delimiter)
@@ -56,7 +57,7 @@ static	char	**allowords(char **split, char const *s, int wordcount, char c)
 	while (wordcount > k)
 	{
 		while (s[i] == c)
-				i++;
+			i++;
 		j = i;
 		if (s[i] != '\0' && s[i] != c)
 		{	
@@ -64,10 +65,7 @@ static	char	**allowords(char **split, char const *s, int wordcount, char c)
 				i++;
 			split[k] = ft_substr(s, j, i - j);
 			if (!split[k])
-			{
-				freestr(split, k);
-				return NULL;
-			}	
+				return (freestr(split, k));
 			k++;
 			j = i;
 		}
@@ -85,8 +83,8 @@ char	**ft_split(char const *s, char c)
 	count = ft_countwords(s, c);
 	splited = (char **)ft_calloc((count + 1), sizeof(char *));
 	if (!splited)
-		return(NULL);
-	if(allowords(splited, s, count, c)==NULL)
-		return NULL;
+		return (NULL);
+	if (allowords(splited, s, count, c) == NULL)
+		return (NULL);
 	return (splited);
 }
