@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 20:22:18 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/30 15:59:32 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:38:35 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-    //void *f(void *cont)
-    //{
-    //     *(char *)cont -= 32;
-    //        return cont;
-    //}
+    void *f(void *cont)
+    {
+		int i = 0;
+		while(((char*)cont)[i] != '\0')
+         {
+			((char *)cont)[i] -= 32;
+			i++;
+		 }
+            return cont;
+    }
 
-    //void del(void *cont)
-    //{
-    //    cont = NULL;
-    //}
+    void del(void *cont)
+    {
+        cont = NULL;
+    }
 
     //void fun()
     //{
@@ -171,10 +176,35 @@ int	main(void)
 	ft_memset(&b, 1, 2);
 	printf("%d\n", b);*/
     //-----------------------------------lstaddnew--------------------------
-void *ptr = ft_calloc(4000000000, 4611);
-(void)ptr;
+	//void *ptr = calloc(4000000000, 4611);
+	//(void)ptr;
+	//free(ptr);
 
     //fun();
+t_list *lst;
+t_list	*mapped;
+
+
+char	cont1[] = "hello";
+char	cont2[] = "Word";
+
+//while (lst)
+//{
+//	printf("%s\n", (char*)lst->content);
+//	lst = lst-> next;
+//}
+
+lst = ft_lstnew(cont1);
+ft_lstadd_back(&lst, ft_lstnew(cont2));
+
+mapped = ft_lstmap(lst, f, del);
+
+while (mapped)
+{
+	printf("%s\n", (char*)mapped->content);
+	mapped = mapped-> next;
+}
+
 
 
 return (0);

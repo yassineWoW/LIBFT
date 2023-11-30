@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:08:14 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/29 16:14:43 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:09:07 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (headnode);
 }
+
+
