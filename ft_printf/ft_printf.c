@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:27 by yimizare          #+#    #+#             */
-/*   Updated: 2023/12/07 16:57:24 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:33:43 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,9 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
+//#include <limits.h>
+//int main()
+//{
+//	ft_printf("%x \n ",18446744073709551615);
+//	//ft_printf("%p  \n",18446744073709551615);
+//}

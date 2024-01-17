@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:07:29 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/12 17:35:09 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:52:46 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *kawma, const char *ibra, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!kawma && !len && ibra)
+		return (NULL);
 	ibra_len = ft_strlen(ibra);
 	if (!*ibra)
 		return ((char *)kawma);

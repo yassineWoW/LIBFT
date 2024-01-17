@@ -22,7 +22,7 @@ LIBC = ar r
 
 all:	${NAME}
 
-${NAME}:	${OBJS}
+${NAME}	:	${OBJS}
 		${LIBC} ${NAME} ${OBJS}
 
 bonus:	${OBJSB}
@@ -41,4 +41,4 @@ re:	fclean	all
 git:
 	git add . ;git commit -m " f"; git push 
 
-.PHONY:	all bonus	re	clean	fclean
+.PHONY:	all	bonus	re	clean	fclean

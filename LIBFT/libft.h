@@ -6,7 +6,7 @@
 /*   By: yimizare <yimizare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:24:53 by yimizare          #+#    #+#             */
-/*   Updated: 2023/11/30 15:44:55 by yimizare         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:51:36 by yimizare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
