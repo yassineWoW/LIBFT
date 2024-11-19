@@ -103,4 +103,4 @@ Makefile	Script to build, clean, and rebuild the library.
 *.o files	Object files generated during compilation.
 
 🖋️ Author
-This project was developed by Yassine Imizare AKA yimizare, as part of the 42 Cursus. For any questions or suggestions, feel free to reach out!
+This project was developed by Yassine Imizare aka yimizare, as part of the 42 Cursus. For any questions or suggestions, feel free to reach out!
